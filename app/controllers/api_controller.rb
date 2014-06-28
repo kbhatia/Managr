@@ -138,8 +138,8 @@ class ApiController < ApplicationController
     :access_key_id => 'Your _ key _ id',
     :secret_access_key =>  'your secret access key')   
      key = File.basename(photo.original_filename)
-     s3.buckets['Facebook_images'].objects[key].write(:file => photo)
-     url = "https://s3.amazonaws.com/Facebook_images/#{photo.original_filename}"   
+     s3.buckets['Your Bucrke'].objects[key].write(:file => photo)
+     url = "https://s3.amazonaws.com/Bucket_Name/#{photo.original_filename}"   
      url 
   end
   
