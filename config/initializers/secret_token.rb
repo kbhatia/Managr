@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ManagR::Application.config.secret_key_base = 'fcae8212644a9919d1867cfd6fb29d16dbc65c0102e16b2ef662f8508c08a076dc942c605802ad46778b749defc321720df7f7749dbd3f49f545b0cf7a800b67'
+ManagR::Application.config.secret_key_base = ''
