@@ -1,0 +1,34 @@
+
+<% for(i=0;i<data.length-1;i++) { %>
+	
+	<div class="fb_post_item panel panel-default">
+		
+		<% if(data[i].message != undefined){ %>
+			<p><%= data[i].message %></p>
+		<% } %>		
+	
+		<% if(data[i].picture != undefined){ %>
+				<img src="<%= data[i].picture %>"/>
+		<% } %>
+		
+		<% if(data[i].link != undefined && data[i].type=="link"){ %>
+			<a href="<%= data[i].link %>"><%= data[i].link %> </a>
+		<% } %>	
+		
+		<% if(data[i].views != undefined){ %>	
+		<br/>
+		<div class="pull-right">
+			<strong>Views</strong>: <%= data[i].views %>
+		</div>
+		
+		<br style="clear:both;"/>
+		<% } %>
+	 					
+	</div>
+	
+	
+<% } %>
+
+<% if(paging){ %>
+	<button id="load_more_button" data-paging_next="<%= paging.next %>" class="btn btn-primary btn-lg">Load more</button>
+<% } %>

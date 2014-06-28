@@ -1,0 +1,18 @@
+<div class="fb_login_space jumbotron">
+	<h1>ManagR</h1>
+	<p>Publish posts to your Facebook pages and view insights for each post.</p>
+	<!-- <div id="managr_intro_banner"> -->
+	<!-- <div class="alert alert-info">
+		Welcome to ManagR! Publish posts and view insights!
+	</div> -->
+<!-- </div> -->
+	<% if flash[:fb_login_error] %>
+		<div class="alert alert-danger">
+			<%= flash[:fb_login_error] %>
+		</div>
+	<% end %>
+
+	<%= link_to 'Click Here to Log in' ,  
+	"https://www.facebook.com/dialog/oauth?client_id=#{@client_id}&redirect_uri=#{@redirect_uri}&scope=manage_pages,publish_stream,read_stream,read_insights,photo_upload", :class=>'btn btn-primary btn-lg' %>
+</div>
+

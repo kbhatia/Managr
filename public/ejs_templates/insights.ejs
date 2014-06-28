@@ -1,0 +1,14 @@
+
+<% for(i=0;i<data.length-1;i++) { %>
+	
+	<div class="fb_post_item panel panel-default">
+	
+		<% if(data[i].name != undefined){ %>
+			<p><%=data[i].description +': '+ data[i].values[i].value %></p>
+		<% } %>	
+	 					
+	</div>
+	
+	
+<% } %>
+

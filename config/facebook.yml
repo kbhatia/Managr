@@ -1,0 +1,15 @@
+development:
+  client_id: 
+  client_secret: 
+  redirect_uri: http://localhost:3000/auth
+
+test:
+  client_id: 
+  client_secret: 
+  redirect_uri: http://localhost:3000/auth
+
+
+production:
+  client_id: 
+  client_secret: 
+  redirect_uri: http://managrapp.herokuapp.com/auth

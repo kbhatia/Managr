@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ManagR</title>
+		<%= stylesheet_link_tag "bootstrap2.min.css" %>
+		<%= stylesheet_link_tag "style.css" %>
+		<%= javascript_include_tag "jquery.js" %>
+		<%= javascript_include_tag "ejs_production.js" %>
+		<%= javascript_include_tag "bootstrap.min.js" %>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<%# stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<%# javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<div id="main" class="col-md-12">
+					<%= yield %>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,101 @@
+body {
+	/*background: url(ricepaper2.png);*/
+}
+
+#main {
+	float: none;
+	margin: 0 auto;
+	padding: 10px;
+	margin-top: 70px;
+}
+
+.fb_login_space {
+	/*text-align:center;*/
+}
+
+#managr_intro_banner {
+	width: 40%;
+	margin: 0 auto;
+	/*text-align:center;*/
+}
+
+#page_posts {
+	margin-left: 40px !important;
+	/*background: rgba(0, 0, 0, 0.05)!important;*/
+}
+
+#fb_page_posts {
+	/*border-top: solid thin #ccc;
+	 border-left: solid thin #ccc;
+	 border-right: solid thin #ccc;*/
+}
+
+.fb_post_item {
+	padding: 10px;
+	word-wrap: break-word;
+}
+
+#ajax-loader-space {
+	text-align: center;
+	display: none;
+	padding: 5px;
+}
+
+#fb-post-link, #fb-post-photo {
+	display: none;
+}
+
+#fb-post-link input {
+	width: 100%;
+}
+
+.fb-post-table td {
+	padding-left: 10px;
+	width: 200px;
+}
+
+#page_posts {
+	height: 500px;
+	/*overflow:auto;*/
+}
+
+select {
+	height: 25px !important;
+}
+
+#fb_post_actions {
+	border-radius: 0px;
+}
+
+.alert-info {
+	background: #4c66a4;
+	border: none;
+}
+
+#page_posts_section {
+	height: 507px;
+	overflow: auto;
+	/*margin-left: 20px;*/
+}
+
+#page_insights_section {
+	/*margin-left: 20px;*/
+}
+
+#page_likes{
+	margin-left:20px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+#load_more_button {
+	width: 100%;
+}
+
+#new_post_form textarea {
+	height: 100px;
+}
+
+.well{
+	border-radius:0px;
+}

@@ -1,0 +1,99 @@
+<%= javascript_include_tag 'PageManager.js' %>
+<%= javascript_include_tag 'chart.min.js' %>
+
+<% if flash[:fb_error_get_pages] %>
+
+<div class="alert alert-danger">
+	<%= flash[:fb_error_get_pages] %>
+</div>
+
+<% end %>
+
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#managr-navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<%= link_to 'ManagR', home_url, :class=>'navbar-brand' %>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="managr-navbar">
+			<ul id="managr-navbar" class="nav navbar-nav navbar-right">
+				<li>
+					<%= link_to 'Sign out', logout_path %>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div id="fb_post_actions" class="col-md-3 well">
+	<h2>New Post</h2>
+	<form action="api/post" id="new_post_form" method="post" enctype="multipart/form-data" class="form">
+		<div class="form-group">
+			<label>Select the page you want to manage:</label>
+
+			<% if @page_names %>
+			<select class="form-control" id="page_name" name="page_name">
+				<% @page_names['data'].each do |p| %>
+				<option value=<%= p['id']+'&'+p['access_token'] %>><%= p['name'] %></option>
+				<% end %>
+			</select>
+			<br />
+			<% end %>
+
+			<label>Type of Post?</label>
+			<select class="form-control" name="post_type" id="post_type">
+				<option value="status">Status</option>
+				<option value="photo">Photo</option>
+				<option value="link">Link</option>
+			</select>
+			<br />
+
+			<label>Published or Unpublished?</label>
+			<select class="form-control" name="publish_type" id="publish_type">
+				<option value="published">Published</option>
+				<option value="unpublished">Unpublished</option>
+			</select>
+
+		</div>
+
+		<div class="form-group" id="fb-post-link">
+			<input type="text" name="link" placeholder="Paste a link here...">
+		</div>
+
+		<div class="form-group" id="fb-post-photo">
+			<input type="file" name="photo" >
+		</div>
+
+		<div class="form-group" id="fb-post-message">
+			<textarea class="form-control" placeholder="Type a message..." name="message"></textarea>
+		</div>
+		<div class="form-group pull-right">
+			<input class="btn btn-primary" type="submit" value="Submit">
+		</div>
+		<br style="clear:both;" />
+
+	</form>
+</div>
+
+<div class="col-md-5 well" id="page_posts_section">
+	<h2 id="post_heading">All Posts</h2>
+	<div id="ajax-loader-space">
+		<%= image_tag 'ajax-loader.gif' %>
+	</div>
+	<div id="fb_page_posts"></div>
+</div>
+<div class="col-md-3" id="page_insights_section">
+	<h2>Page Insights</h2>
+	<canvas id="myChart"></canvas>
+	<div id="insight_data"></div>
+	<div id="page_likes">
+		<br />
+	</div>
+</div>
